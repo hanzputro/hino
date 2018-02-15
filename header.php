@@ -27,34 +27,27 @@
 <body>
     
     <div class="container header">
-        <div class="container1600">
-            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-ccw-black.png" alt=""></a></div>
+        <div class="container1200">
+            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-dealerhinobekasi.jpg" alt=""></a></div>
             <div class="navbar">
-                <ul class="medium">
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">ABOUT US</a></li>
+                <ul class="info">
+                    <li class="">More info: Telp. 082298666428</li>
+                </ul>
+                <ul class="">
                     <li><a href="#notset" class="">CONNECT</a></li>
                     <li>
-                        <div class="ico-menu">
-                            <div class="ico-menu__line ico-menu__line1"></div>
-                            <div class="ico-menu__line ico-menu__line2"></div>
-                            <div class="ico-menu__line ico-menu__line3"></div>
-                        </div>
-                        <div class="ico-menu__content">
+                        <a href="">PRODUK</a>
+                        <div class="submenu">
                             <ul>
-                                <li class="active">
-                                    <a class="">ABOUT US</a>
-                                    <ul class="ico-menu__submenu">
-                                        <li><a href="<?php echo site_url(); ?>/who-we-are">Who We Are</a></li>
-                                        <li><a href="<?php echo site_url(); ?>/service">Services</a></li>
-                                        <li><a href="<?php echo site_url(); ?>/The-leaders">Our Leaders</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="<?php echo site_url(); ?>/ministry" class="">MINISTRY</a></li>
-                                <li><a href="<?php echo site_url(); ?>/media" class="">MEDIA</a></li>
-                                <li><a href="<?php echo site_url(); ?>/contact" class="">CONTACT</a></li>
+                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
+                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
+                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
                             </ul>
                         </div>
                     </li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">TENTANG KAMI</a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">SERVICE &amp; SPAREPART</a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">PROMO</a></li>
                 </ul>
             </div>
         </div>

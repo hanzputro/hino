@@ -30,6 +30,10 @@
         @extend .container;
         width:940px;
     }
+    &1200{
+        @extend .container;
+        width:1200px;
+    }
     &1600{
         @extend .container;
         width:1600px;

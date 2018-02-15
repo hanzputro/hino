@@ -1,22 +1,22 @@
 @import "../base/color";
 @import "../base/extend-only";
 
-.cd-section{
-    .section-cover{ 
-        // position: relative;
-        width: 100%; height:100vh;
-        background-position:center center;
-        background-size: cover;
-        background-attachment: fixed;
-        padding:100px 0 0 0;
-        overflow: hidden;
-        box-shadow:none !important;
-        .section{
-            // padding:100px 0 0 0;
-            height:auto;    
-        }
-    }    
-}
+// .cd-section{
+//     .section-cover{ 
+//         // position: relative;
+//         width: 100%; height:100vh;
+//         background-position:center center;
+//         background-size: cover;
+//         background-attachment: fixed;
+//         padding:100px 0 0 0;
+//         overflow: hidden;
+//         box-shadow:none !important;
+//         .section{
+//             // padding:100px 0 0 0;
+//             height:auto;    
+//         }
+//     }    
+// }
 
 @keyframes showtoup {
     to{ transform: translateY(0px); opacity:1; }
