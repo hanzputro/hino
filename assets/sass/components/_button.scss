@@ -1,0 +1,35 @@
+input[type='submit'],
+button{ cursor:pointer; }
+a,
+input[type='submit'],
+button{
+    position:relative;
+    display: inline-block;
+	border: none; outline: none; 
+	text-decoration:none;
+    &.disabled{
+        cursor: default !important;
+        background:#A09FA4 !important;
+        box-shadow:none;
+    }
+	&.button--purple{
+        cursor:pointer;
+        font-size: 14px;
+        text-decoration:none;
+        text-shadow: 0 2px 4px rgba(0,0,0,0.10);
+		padding: 10px 20px;
+        color:white;
+        background: $color-purple;
+        border-radius:2px;
+        margin:0 2px;
+        white-space: nowrap;
+        &:hover{ opacity:0.8; }
+    }
+}
+
+// responsive
+@media (max-width: 1024px) {
+}
+
+@media (max-width: 480px) {
+}

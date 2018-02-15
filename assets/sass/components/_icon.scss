@@ -1,0 +1,16 @@
+@mixin sprite($width, $height, $margin) {
+	display: inline-block;
+	vertical-align: middle;
+	width: $width;
+	height: $height;
+	margin: $margin;
+}
+
+.ico-email {
+	@include sprite(40px, 40px, 0 10px 0 0);
+	background:url(../../images/ico-email.png) no-repeat;	
+}
+.ico-instagram {
+	@include sprite(40px, 40px, 0 10px 0 0);
+	background:url(../../images/ico-instagram.png) no-repeat;
+}
