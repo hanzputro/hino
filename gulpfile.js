@@ -1,6 +1,7 @@
 process.env.DISABLE_NOTIFIER = true;
 // elixir.config.sourcemaps = false;
 
+// npm i gulp gulp-connect-php gulp-sass gulp-concat gulp-minifier gulp-wait browser-sync --save-dev
 var bowerDir = 'assets/vendor/';
 var gulp = require("gulp");
 var php = require('gulp-connect-php');
