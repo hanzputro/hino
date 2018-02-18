@@ -1,0 +1,20 @@
+.box{
+  margin-bottom:2%;
+  .box__top{
+    width:100%;
+    padding:5px 5px;
+    border-radius:0 20px 0 0;
+    background: linear-gradient(to bottom, #000000 0%,#282e41 100%);
+    font-size:12px;
+    font-weight:600;
+    line-height:normal;
+    color:#f8fb8c;
+  }
+  .box__middle{
+    width:100%;
+    img{ float:left; }
+  }
+  .box__bottom{
+    width:100%;
+  }
+}

@@ -34,9 +34,8 @@
                     <li class="">More info: Telp. 082298666428</li>
                 </ul>
                 <ul class="">
-                    <li><a href="#notset" class="">CONNECT</a></li>
                     <li>
-                        <a href="">PRODUK</a>
+                        <a href=""><b>PRODUK</b></a>
                         <div class="submenu">
                             <ul>
                                 <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
@@ -45,9 +44,9 @@
                             </ul>
                         </div>
                     </li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">TENTANG KAMI</a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">SERVICE &amp; SPAREPART</a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="">PROMO</a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>TENTANG KAMI</b></a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>SERVICE &amp; SPAREPART</b></a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>PROMO</b></a></li>
                 </ul>
             </div>
         </div>

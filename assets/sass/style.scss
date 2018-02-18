@@ -23,13 +23,9 @@ Tags: hino, bekasi, dealer hino, dealer hino bekasi.
 /* Components */
 @import "components/header";
 @import "components/footer";
-// @import "partials/form";
-// @import "partials/button";
-// @import "partials/tab";
-// @import "partials/table";
-// @import "partials/dropdown";
-// @import "partials/tooltip";
-// @import "partials/popup";
+@import "components/box";
+@import "components/news";
+@import "components/button";
 
 /* vendor custom */
 @import "vendor/page-scroll-effects";

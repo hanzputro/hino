@@ -12,18 +12,23 @@ button{
         background:#A09FA4 !important;
         box-shadow:none;
     }
-	&.button--purple{
+    &.button--primary{
         cursor:pointer;
-        font-size: 14px;
+        font-size: 12px;
+        font-weight: 600;
         text-decoration:none;
         text-shadow: 0 2px 4px rgba(0,0,0,0.10);
-		padding: 10px 20px;
+        padding: 5px 20px;
         color:white;
-        background: $color-purple;
+        background: linear-gradient(to bottom, #000000 0%,#282e41 100%);
         border-radius:2px;
         margin:0 2px;
         white-space: nowrap;
         &:hover{ opacity:0.8; }
+    }
+	&.button--purple{
+        @extend .button--primary;
+        background: $color-purple;
     }
 }
 
