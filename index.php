@@ -10,7 +10,7 @@
     $node->addAttribute("data-animation", 'none');
     echo $node->asXML();
 ?>       
-    <section class="">
+    <section class="center">
         <div class="banner">
             <div class="banner__list"><img src="<?php bloginfo('template_url'); ?>/dist/images/banner.jpg" alt=""></div>
         </div>
@@ -54,18 +54,29 @@
                         <div class="box__top"><span class="">&#9656; ACARA &amp; BERITA</span></div>
                         <div class="box__middle content">
                             <div class="news">
-                                <div class="news__list">
-                                    <h6 class="title">Lorem ipsum dolor sit amet</h6>
-                                    <small class="desc"><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt="" width="108">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum <a href="" class="link">Selengkapnya &raquo;</a></small>
-                                </div>
-                                <div class="news__list">
-                                    <h6 class="title">Lorem ipsum dolor sit amet</h6>
-                                    <small class="desc"><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt="" width="108">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum <a href="" class="link">Selengkapnya &raquo;</a></small>
-                                </div>
-                                <div class="news__list">
-                                    <h6 class="title">Lorem ipsum dolor sit amet</h6>
-                                    <small class="desc"><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt="" width="108">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum <a href="" class="link">Selengkapnya &raquo;</a></small>
-                                </div>
+                                <?php
+
+                                global $post;
+                                $args = array( 'posts_per_page' => 3 );
+
+                                $myposts = get_posts( $args );
+                                foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+                                    <div class="news__list">
+                                        <a href="<?php the_permalink(); ?>"><h6 class="title"><?php the_title(); ?></h6></a>
+                                        <div class="desc">
+                                            <?php
+                                                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
+                                                    the_post_thumbnail( 'full' );
+                                                }
+                                            ?>
+                                            <?php my_excerpt(20); ?>
+                                            <a href="<?php the_permalink(); ?>" class="link s12">Selengkapnya &raquo;</a>
+                                        </div>
+                                    </div>
+                                <?php endforeach; 
+                                wp_reset_postdata();
+
+                                ?>
                                 <center><a href="" class="button--primary">MORE <span style="font-size:16px;">&raquo;</span></a></center>
                             </div>
                         </div>

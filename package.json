@@ -1,28 +1,29 @@
 {
-  "name": "hino",
-  "version": "1.0.0",
-  "description": "Contributors: Devin Price\r Tags: options, theme options\r Donate link: http://bit.ly/options-donate-2\r Requires at least: 3.6\r Tested up to: 4.0\r Stable tag: 1.9.1\r License: GPLv2",
-  "main": "gulpfile.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prod": "gulp --production",
+    "dev": "gulp watch"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/hanzputro/hino.git"
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1",
+    "jquery": "^3.1.0",
+    "laravel-elixir": "^6.0.0-16",
+    "laravel-elixir-vue-2": "^0.2.0",
+    "laravel-elixir-webpack-official": "^1.0.2",
+    "lodash": "^4.16.2",
+    "vue": "^2.0.1",
+    "vue-resource": "^1.0.3"
   },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/hanzputro/hino/issues"
-  },
-  "homepage": "https://github.com/hanzputro/hino#readme",
   "dependencies": {
     "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-connect-php": "^1.0.1",
     "gulp-minifier": "^1.1.0",
-    "gulp-sass": "^3.1.0",
-    "gulp-wait": "0.0.2"
+    "gulp-wait": "0.0.2",
+    "laravel-elixir-browsersync-official": "^1.0.0",
+    "node-sass": "^4.5.3",
+    "smooth-scrollbar": "^7.4.1"
   }
 }

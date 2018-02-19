@@ -87,7 +87,7 @@ h6{
 p{
     font-size: 12px;
     line-height: 24px;
-    margin:20px 0;    
+    margin:10px 0;    
 }
 small {
     font-size: 11px;
@@ -360,28 +360,43 @@ article{
     }
 }
 
-// responsive
-@media (max-width:1024px){
-    .s12{ font-size:12px; }
-    .s14{ font-size:14px; }
-    .s16{ font-size:16px; }
-    .s18{ font-size:16px; }
-    .s20{ font-size:18px; }
-    .s22{ font-size:20px; }
-    .s24{ font-size:20px; line-height:28px; }
-    .s30{ font-size:20px; line-height:30px; }
-    .s38{ font-size:26px; line-height:32px; }
-    .s40{ font-size:32px; line-height:34px; }
-    .s50{ font-size:32px; line-height:40px; margin-bottom:40px; }
-    h1{ font-size:20px; }
+// from Wordpress Editor
+.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignright {
+    float: right;
+    margin: 0.5em 0 0.5em 1em;
+}
+.alignleft{
+    float: left;
+    margin: 0.5em 1em 0.5em 0;
 }
 
-@media (max-width:767px){
-    .s20{ font-size:16px; line-height:24px; }
-    .s24{ font-size:16px; line-height:24px; }
-    .s30{ font-size:16px; line-height:24px; }
-    .s38{ font-size:22px; line-height:32px; }
-    .s40{ font-size:24px; line-height:32px; }
-    .s50{ font-size:28px; line-height:38px; }
-}
+// responsive
+// @media (max-width:1024px){
+//     .s12{ font-size:12px; }
+//     .s14{ font-size:14px; }
+//     .s16{ font-size:16px; }
+//     .s18{ font-size:16px; }
+//     .s20{ font-size:18px; }
+//     .s22{ font-size:20px; }
+//     .s24{ font-size:20px; line-height:28px; }
+//     .s30{ font-size:20px; line-height:30px; }
+//     .s38{ font-size:26px; line-height:32px; }
+//     .s40{ font-size:32px; line-height:34px; }
+//     .s50{ font-size:32px; line-height:40px; margin-bottom:40px; }
+//     h1{ font-size:20px; }
+// }
+
+// @media (max-width:767px){
+//     .s20{ font-size:16px; line-height:24px; }
+//     .s24{ font-size:16px; line-height:24px; }
+//     .s30{ font-size:16px; line-height:24px; }
+//     .s38{ font-size:22px; line-height:32px; }
+//     .s40{ font-size:24px; line-height:32px; }
+//     .s50{ font-size:28px; line-height:38px; }
+// }
 

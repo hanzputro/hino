@@ -1,41 +1,57 @@
 <?php get_header(); ?>
 
     <section class="container1200">
-        <div class="container__content grid">
+        <div class="grid" id="section-cover2">
 
             <div class="span9">
-                <!-- news detail -->
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <!-- title -->
-                    <h1 class="lt"><font><?php the_title(); ?></font></h1>
-                    <!-- date -->
-                    <small class="post__date"><?php the_date(); ?></small>
-                    <!-- gallery & content -->
-                    <p><?php the_content(); ?></p>
-                <?php endwhile; // end of the loop. ?>
+                <!-- news list -->
+                <h2>Recent Posts</h2>
+                <ul>
+                    <?php
+                        $args = array( 'numberposts' => '5', 'tax_query' => array(
+                                array(
+                                    'taxonomy' => 'post_format',
+                                    'field' => 'slug',
+                                    'terms' => 'post-format-aside',
+                                    'operator' => 'NOT IN'
+                                ), 
+                                array(
+                                    'taxonomy' => 'post_format',
+                                    'field' => 'slug',
+                                    'terms' => 'post-format-image',
+                                    'operator' => 'NOT IN'
+                                )
+                        ) );
+                        $recent_posts = wp_get_recent_posts( $args );
+                        foreach( $recent_posts as $recent ){
+                            echo '<li><a href="' . get_permalink($recent["ID"]) . '">' .   ( __($recent["post_title"])).'</a> </li> ';
+                        }
+                        wp_reset_query();
+                    ?>
+                </ul>
             </div>
 
             <div class="span3">
                 <div class="grid">
-                    <div class="span12 box">
+                    <div class="span4 box">
                         <div class="box__top"><span class="">&#9656; PROMO HINO</span></div>
                         <div class="box__middle">
                             <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img1.jpg" alt=""></a>
                         </div>
                     </div>
-                    <div class="span12 box">
+                    <div class="span4 box">
                         <div class="box__top"><span class="">&#9656; TIPS HINO</span></div>
                         <div class="box__middle">
                             <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>
                         </div>
                     </div>
-                    <div class="span12 box">
+                    <div class="span4 box">
                         <div class="box__top"><span class="">&#9656; HARGA HINO</span></div>
                         <div class="box__middle">
                             <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>
                         </div>
                     </div>
-                    <div class="span12 box">
+                    <div class="span4 box">
                         <div class="box__top"><span class="">&#9656; HUBUNGI KAMI</span></div>
                         <div class="box__middle">
                             <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>

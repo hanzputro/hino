@@ -1,11 +1,15 @@
 .news{
     .news__list{
-    	margin:0 0 10px 0;    	
+    	margin:0 0 20px 0;    	
         .thumb{}
         .date{}
         .title{}
         img{ margin:0 8px 5px 8px; }
-        small{ line-height:16px; }
+        p{ 
+            display:initial;
+            font-size:12px;
+            line-height:16px; 
+        }
         .desc{ @extend %clearfix; }
     }
     .news__detail{
