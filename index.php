@@ -21,30 +21,33 @@
 
             <div class="span8">
                 <div class="grid">
-                    <div class="span4 box">
-                        <div class="box__top"><span class="">&#9656; PROMO HINO</span></div>
-                        <div class="box__middle">
-                            <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img1.jpg" alt=""></a>
+                    <?php 
+                    // the query to set the posts per page to 5
+                    $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                    $args = array('paged' => $paged, 'category_name' => 'special-news' );
+                    query_posts($args); ?>
+                    <!-- the loop -->
+                    <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+                        <!-- rest of the loop -->
+                        <!-- the title, the content etc.. -->
+                        <div class="span4 box">
+                            <div class="box__top"><span class="">&#9656; <?php the_title(); ?></span></div>
+                            <div class="box__middle">
+                                <a href="<?php the_permalink(); ?>">
+                                    <?php
+                                        if ( has_post_thumbnail() ) {
+                                            the_post_thumbnail( 'full' );
+                                        }
+                                    ?>
+                                </a>
+                            </div>
                         </div>
-                    </div>
-                    <div class="span4 box">
-                        <div class="box__top"><span class="">&#9656; TIPS HINO</span></div>
-                        <div class="box__middle">
-                            <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="span4 box">
-                        <div class="box__top"><span class="">&#9656; HARGA HINO</span></div>
-                        <div class="box__middle">
-                            <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>
-                        </div>
-                    </div>
-                    <div class="span4 box">
-                        <div class="box__top"><span class="">&#9656; HUBUNGI KAMI</span></div>
-                        <div class="box__middle">
-                            <a href=""><img src="<?php bloginfo('template_url'); ?>/dist/images/sample-img2.jpg" alt=""></a>
-                        </div>
-                    </div>
+
+                    <?php endwhile; ?>
+                    <?php else : ?>
+                    <!-- No posts found -->
+                    <?php endif; ?>
+
                 </div>
             </div>
 
@@ -65,8 +68,8 @@
                                         <a href="<?php the_permalink(); ?>"><h6 class="title"><?php the_title(); ?></h6></a>
                                         <div class="desc">
                                             <?php
-                                                if ( has_post_thumbnail() ) { // check if the post has a Post Thumbnail assigned to it.
-                                                    the_post_thumbnail( 'full' );
+                                                if ( has_post_thumbnail() ) {
+                                                    the_post_thumbnail( array( 100, 80) );
                                                 }
                                             ?>
                                             <?php my_excerpt(20); ?>

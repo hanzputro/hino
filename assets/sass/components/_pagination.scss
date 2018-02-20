@@ -1,0 +1,27 @@
+.pagination{
+    text-align:right;
+    margin:20px 0 0 0;
+    .screen-reader-text{
+        display:none;
+    }
+    .nav-links{
+        display:inline-block;
+        margin:0 auto;
+        .page-numbers{
+            color: #5f5f5f;
+            padding: 7px 11px;
+            height:25px;
+            font-weight: 500;
+            font-size: 12px;
+            border-radius: 4px;
+            background:#f1f1f1;
+            &:hover{
+                background:#ddd;
+            }
+            &.current{
+                background:#07112c;
+                color:#fff;
+            }
+        }
+    }
+}

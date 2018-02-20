@@ -70,7 +70,14 @@ jQuery(document).ready(function() {
 }
 
 
-// create excerpt custom
+
+/**
+* Add Google captcha field to Comment form
+* By Hanzputro
+*/
+/*********************************************************/
+/*                create excerpt custom                  */
+/*********************************************************/
 class Excerpt {
 
   // Default length (by WordPress)
@@ -128,15 +135,22 @@ function new_excerpt_more( $more ) {
 
 
 
-// add featured image on post
-add_theme_support( 'post-thumbnails' ); 
-
-/**
-* Add Google captcha field to Comment form
-* By Hanzputro
-*/
 /*********************************************************/
-/*                 Form Contact Setup                   */
+/*             add featured image on post                */
+/*********************************************************/
+add_theme_support( 'post-thumbnails' );
+
+
+
+/*********************************************************/
+/*                 numeric pagination                    */
+/*********************************************************/
+the_posts_pagination( array( 'mid_size'  => 2 ) ); 
+
+
+
+/*********************************************************/
+/*                 Form Contact Setup                    */
 /*********************************************************/
 // response generation function
 $response = "";
