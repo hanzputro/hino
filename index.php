@@ -80,7 +80,7 @@
                                 wp_reset_postdata();
 
                                 ?>
-                                <center><a href="" class="button--primary">MORE <span style="font-size:16px;">&raquo;</span></a></center>
+                                <center><a href="<?php bloginfo('url'); ?>/news" class="button--primary">MORE <span style="font-size:16px;">&raquo;</span></a></center>
                             </div>
                         </div>
                         <br><br>
