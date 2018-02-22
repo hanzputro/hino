@@ -34,19 +34,40 @@
                     <li class="">More info: Telp. 082298666428</li>
                 </ul>
                 <ul class="">
-                    <li>
-                        <a href=""><b>PRODUK</b></a>
-                        <div class="submenu">
+                    <li class="has-submenu">
+                        <a href="" class="menu-link"><b>PRODUK</b></a>
+                        <div class="container1200 submenu">
                             <ul>
-                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
-                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
-                                <li><a href="<?php echo site_url(); ?>/who-we-are" class="">.</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 1</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino1.jpg" alt="">
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 2</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino2.jpg" alt="">
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 3</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino3.jpg" alt="">                                    
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 1</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino1.jpg" alt="">
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 2</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino2.jpg" alt="">
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
+                                <li>
+                                    <p class="tittle margin0">Dutros Hino 3</p>
+                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino3.jpg" alt="">                                    
+                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>  
                             </ul>
                         </div>
                     </li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>TENTANG KAMI</b></a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>SERVICE &amp; SPAREPART</b></a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class=""><b>PROMO</b></a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>TENTANG KAMI</b></a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>SERVICE &amp; SPAREPART</b></a></li>
+                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>PROMO</b></a></li>
                 </ul>
             </div>
         </div>
