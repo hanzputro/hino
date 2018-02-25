@@ -37,37 +37,67 @@
                     <li class="has-submenu">
                         <a href="" class="menu-link"><b>PRODUK</b></a>
                         <div class="container1200 submenu">
-                            <ul>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 1</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino1.jpg" alt="">
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 2</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino2.jpg" alt="">
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 3</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino3.jpg" alt="">                                    
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 1</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino1.jpg" alt="">
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 2</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino2.jpg" alt="">
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>
-                                <li>
-                                    <p class="tittle margin0">Dutros Hino 3</p>
-                                    <img class="" src="<?php bloginfo('template_url'); ?>/dist/images/product/hino3.jpg" alt="">                                    
-                                    <a href="<?php echo site_url(); ?>/who-we-are" class="button--gray widthfull center">DETAIL</a></li>  
+                            <ul class="tab-link margin0">
+                                <li class="active"><a href="#hino300-series"><h5 class="margin0">HINO300 Series</h5></a></li>
+                                <li><a href="#hino500-series"><h5 class="margin0">HINO500 Series</h5></a></li>
+                            </ul>
+                            <ul class="tab-container margin0">
+                                <li class="tab-content" id="hino300-series">
+                                    <ul class="margin0">
+                                        <?php 
+                                        // the query to set the posts per page to 5
+                                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                                        $args = array('paged' => $paged, 'category_name' => 'hino300-series' );
+                                        query_posts($args); ?>
+                                        <!-- the loop -->
+                                        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+                                            <!-- rest of the loop -->
+                                            <!-- the title, the content etc.. -->
+                                            <li>
+                                                <p class="tittle margin0"><?php the_title(); ?></p>
+                                                <?php
+                                                    if ( has_post_thumbnail() ) {
+                                                        the_post_thumbnail();
+                                                    }
+                                                ?>
+                                                <a href="<?php the_permalink(); ?>" class="button--gray widthfull center">DETAIL</a>
+                                            </li>
+                                        <?php endwhile; ?>
+                                        <?php else : ?>
+                                        <!-- No posts found -->
+                                        <?php endif; ?>
+                                    </ul>
+                                <li class="tab-content" id="hino500-series">
+                                    <ul class="margin0">
+                                        <?php 
+                                        // the query to set the posts per page to 5
+                                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
+                                        $args = array('paged' => $paged, 'category_name' => 'hino500-series' );
+                                        query_posts($args); ?>
+                                        <!-- the loop -->
+                                        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
+                                            <!-- rest of the loop -->
+                                            <!-- the title, the content etc.. -->
+                                            <li>
+                                                <p class="tittle margin0"><?php the_title(); ?></p>
+                                                <?php
+                                                    if ( has_post_thumbnail() ) {
+                                                        the_post_thumbnail();
+                                                    }
+                                                ?>
+                                                <a href="<?php the_permalink(); ?>" class="button--gray widthfull center">DETAIL</a>
+                                            </li>
+                                        <?php endwhile; ?>
+                                        <?php else : ?>
+                                        <!-- No posts found -->
+                                        <?php endif; ?>
+                                    </ul>
+                                </li>
                             </ul>
                         </div>
                     </li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>TENTANG KAMI</b></a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>SERVICE &amp; SPAREPART</b></a></li>
-                    <li><a href="<?php echo site_url(); ?>/who-we-are" class="menu-link"><b>PROMO</b></a></li>
+                    <li><a href="<?php bloginfo('url'); ?>/news/tentang-kami" class="menu-link"><b>TENTANG KAMI</b></a></li>
+                    <li><a href="<?php bloginfo('url'); ?>/news/service-sparepart" class="menu-link"><b>SERVICE &amp; SPAREPART</b></a></li>
                 </ul>
             </div>
         </div>

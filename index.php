@@ -60,7 +60,7 @@
                                 <?php
 
                                 global $post;
-                                $args = array( 'posts_per_page' => 3 );
+                                $args = array( 'posts_per_page' => 3, 'category_name' => 'news' );
 
                                 $myposts = get_posts( $args );
                                 foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
