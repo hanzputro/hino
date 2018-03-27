@@ -150,6 +150,26 @@ the_posts_pagination( array( 'mid_size'  => 2 ) );
 
 
 /*********************************************************/
+/*             category-thumbnails Plugins               */
+/*********************************************************/
+add_theme_support('category-thumbnails');
+
+
+
+// Try change the pre_get_posts filter.
+function namespace_add_custom_types( $query ) {
+  if( is_category() || is_tag() && empty( $query->query_vars['suppress_filters'] ) ) {
+    $query->set( 'post_type', array(
+              'post', 'page'
+            ));
+    return $query;
+   }
+}
+add_filter( 'pre_get_posts', 'namespace_add_custom_types' );
+
+
+
+/*********************************************************/
 /*                 Form Contact Setup                    */
 /*********************************************************/
 // response generation function

@@ -1,9 +1,3 @@
-<?php
-/*
-Template Name: Blog Template
-*/
-?>
-
 <?php get_header(); ?>
     
     <!-- <section class="center">
@@ -18,37 +12,45 @@ Template Name: Blog Template
             <div class="span8">
                 <div class="grid">
                     <div class="span12 box">
-                        <div class="box__top"><span class="">&#9656; ACARA &amp; BERITA</span></div>
                         <div class="box__middle content">
-                            <div class="news">
+                            <div class="grid news">
+
                                 <?php 
+                                // get slug/hash from url
+                                $anchor = explode('/', $_SERVER['REQUEST_URI']);
+                                $anchor = $anchor[ count($anchor) - 2 ];
+                                    // echo $anchor;
                                 // the query to set the posts per page to 5
                                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                $args = array('posts_per_page' => 1, 'paged' => $paged, 'category_name' => 'news' );
+                                $args = array('paged' => $paged, 'category_name' => ''.$anchor.'' );
                                 query_posts($args); ?>
                                 <!-- the loop -->
                                 <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
                                         <!-- rest of the loop -->
                                         <!-- the title, the content etc.. -->
-                                        <div class="news__list">
+                                        <div class="span6 news__list">
                                             <a href="<?php the_permalink(); ?>"><h6 class="title"><?php the_title(); ?></h6></a>
                                             <div class="desc">
+                                                <style>
+                                                    .news .news__list{ margin-right:1.5%; }
+                                                    .news .news__list img{ width:110px; } 
+                                                }
+                                                </style>
                                                 <?php
                                                     if ( has_post_thumbnail() ) {
                                                         the_post_thumbnail( array( 190, 110) );
                                                     }
                                                 ?>
-                                                <?php my_excerpt(80); ?>
+                                                <?php my_excerpt(30); ?>
                                                 <a href="<?php the_permalink(); ?>" class="link s12">Selengkapnya &raquo;</a>
                                             </div>
                                         </div>
 
                                 <?php endwhile; ?>
-                                <!-- pagination -->
-                                <?php the_posts_pagination(); ?>
                                 <?php else : ?>
                                 <!-- No posts found -->
                                 <?php endif; ?>
+
                             </div>
                         </div>
                         <br><br>

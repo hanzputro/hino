@@ -39,7 +39,8 @@
             &.has-submenu{
                 margin: -10px 0 0 0;                
                 .menu-link{
-                    padding:10px 35px 10px 20px;                    
+                    padding:10px 35px 10px 20px;
+                    background: linear-gradient(#333 0%, #000000 100%);                    
                     &:after{
                         content:'';
                         position: absolute;
@@ -62,14 +63,18 @@
             }
         }
         ul.info{
-            position: absolute;
-            top:0; right:37px;
-            background:#fff;
-            margin:0;
-            padding:5px 10px;
-            border-radius:0 0 4px 4px;
-            color:#000;
-            font-weight:600;
+            position: fixed;
+            top: 0;
+            border: 2px solid #000;
+            border-top: 0;
+            right: 37px;
+            background: #fff;
+            margin: 0;
+            padding: 5px 10px;
+            border-radius: 0 0 4px 4px;
+            color: #000;
+            font-weight: 600;
+            z-index: 100;
         }        
     }
 
@@ -139,6 +144,15 @@
     }
     .tab-container{
         border-top:1px solid #ddd;
+        padding:20px 0 0 0;
+        li{
+            float: none;
+            display: inline-block;
+            img{
+                width:120px;
+                height:85px;
+            }
+        }
         .tab-content{
             margin:20px 10px;
             display:none;

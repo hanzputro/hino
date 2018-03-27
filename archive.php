@@ -24,7 +24,7 @@ Template Name: Blog Template
                                 <?php 
                                 // the query to set the posts per page to 5
                                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                $args = array('posts_per_page' => 1, 'paged' => $paged, 'category_name' => 'news' );
+                                $args = array('posts_per_page' => 5, 'paged' => $paged, 'category_name' => 'news' );
                                 query_posts($args); ?>
                                 <!-- the loop -->
                                 <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>

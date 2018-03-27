@@ -28,76 +28,63 @@
     
     <div class="container header">
         <div class="container1200">
-            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php bloginfo('template_url'); ?>/dist/images/logo-dealerhinobekasi.jpg" alt=""></a></div>
+            <div class="logo"><a href="<?php echo site_url(); ?>"><img src="<?php echo of_get_option('header-logo'); ?>" alt=""></a></div>
             <div class="navbar">
                 <ul class="info">
-                    <li class="">More info: Telp. 082298666428</li>
+                    <li class=""><?php echo of_get_option('header-mi'); ?></li>
                 </ul>
                 <ul class="">
                     <li class="has-submenu">
                         <a href="" class="menu-link"><b>PRODUK</b></a>
                         <div class="container1200 submenu">
-                            <ul class="tab-link margin0">
-                                <li class="active"><a href="#hino300-series"><h5 class="margin0">HINO300 Series</h5></a></li>
-                                <li><a href="#hino500-series"><h5 class="margin0">HINO500 Series</h5></a></li>
-                            </ul>
-                            <ul class="tab-container margin0">
-                                <li class="tab-content" id="hino300-series">
-                                    <ul class="margin0">
-                                        <?php 
-                                        // the query to set the posts per page to 5
-                                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                        $args = array('paged' => $paged, 'category_name' => 'hino300-series' );
-                                        query_posts($args); ?>
-                                        <!-- the loop -->
-                                        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-                                            <!-- rest of the loop -->
-                                            <!-- the title, the content etc.. -->
-                                            <li>
-                                                <p class="tittle margin0"><?php the_title(); ?></p>
-                                                <?php
-                                                    if ( has_post_thumbnail() ) {
-                                                        the_post_thumbnail();
-                                                    }
-                                                ?>
-                                                <a href="<?php the_permalink(); ?>" class="button--gray widthfull center">DETAIL</a>
-                                            </li>
-                                        <?php endwhile; ?>
-                                        <?php else : ?>
-                                        <!-- No posts found -->
-                                        <?php endif; ?>
-                                    </ul>
-                                <li class="tab-content" id="hino500-series">
-                                    <ul class="margin0">
-                                        <?php 
-                                        // the query to set the posts per page to 5
-                                        $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                        $args = array('paged' => $paged, 'category_name' => 'hino500-series' );
-                                        query_posts($args); ?>
-                                        <!-- the loop -->
-                                        <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
-                                            <!-- rest of the loop -->
-                                            <!-- the title, the content etc.. -->
-                                            <li>
-                                                <p class="tittle margin0"><?php the_title(); ?></p>
-                                                <?php
-                                                    if ( has_post_thumbnail() ) {
-                                                        the_post_thumbnail();
-                                                    }
-                                                ?>
-                                                <a href="<?php the_permalink(); ?>" class="button--gray widthfull center">DETAIL</a>
-                                            </li>
-                                        <?php endwhile; ?>
-                                        <?php else : ?>
-                                        <!-- No posts found -->
-                                        <?php endif; ?>
-                                    </ul>
+                            <ul class="tab-container margin0 center">
+                                <!-- <li>
+                                    <p class="tittle margin0">aaaa</p>
+                                    
+                                    <a href="#aaa" class="button--gray widthfull center">DETAIL</a>
                                 </li>
+                                 <li>
+                                    <p class="tittle margin0">bbbb</p>
+                                    
+                                    <a href="#bbbb" class="button--gray widthfull center">DETAIL</a>
+                                </li> -->
+
+                                <?php
+                                    $args = array(
+                                      'orderby' => 'name',
+                                      'child_of' => 4, //parent id
+                                      'taxonomy' => 'category'
+                                    );
+
+                                    $categories = get_categories( $args );
+                                    foreach ($categories as $cat) {
+                                        $category_link = get_category_link($cat->cat_ID);
+                                        $category_thumbnail = get_the_category_thumbnail($cat->cat_ID);
+                                        ?>
+                                        <li>
+                                            <p class="tittle margin0"><?php echo $cat->cat_name ?></p>
+                                            <?php echo $category_thumbnail ?>
+                                            <a class="button--gray widthfull center" href="<?php echo esc_url( $category_link ); ?>">DETAIL</a>
+                                        </li>
+                                        <?php
+                                    }
+                                ?>
+
                             </ul>
                         </div>
                     </li>
-                    <li><a href="<?php bloginfo('url'); ?>/news/tentang-kami" class="menu-link"><b>TENTANG KAMI</b></a></li>
-                    <li><a href="<?php bloginfo('url'); ?>/news/service-sparepart" class="menu-link"><b>SERVICE &amp; SPAREPART</b></a></li>
+                    <?php
+
+                    global $post;
+                    $args = array( 'category_name' => 'navbar' );
+
+                    $myposts = get_posts( $args );
+                    foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+                        <li><a href="<?php the_permalink(); ?>" class="menu-link"><b><?php the_title(); ?></b></a></li>
+                    <?php endforeach; 
+                    wp_reset_postdata();
+
+                    ?>
                 </ul>
             </div>
         </div>
