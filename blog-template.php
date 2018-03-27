@@ -24,14 +24,14 @@ Template Name: Blog Template
                                 <?php 
                                 // the query to set the posts per page to 5
                                 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-                                $args = array('posts_per_page' => 1, 'paged' => $paged, 'category_name' => 'news' );
+                                $args = array('posts_per_page' => 5, 'paged' => $paged, 'category_name' => 'news' );
                                 query_posts($args); ?>
                                 <!-- the loop -->
                                 <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
                                         <!-- rest of the loop -->
                                         <!-- the title, the content etc.. -->
                                         <div class="news__list">
-                                            <a href="<?php the_permalink(); ?>"><h6 class="title"><?php the_title(); ?></h6></a>
+                                            <a href="<?php the_permalink(); ?>"><h5 class="title"><?php the_title(); ?></h5></a>
                                             <div class="desc">
                                                 <?php
                                                     if ( has_post_thumbnail() ) {

@@ -165,12 +165,23 @@ function optionsframework_options() {
 		- Click "<b>Publish</b>" button to publish the special news content,<br>
 		- then you can view in <a href="../" target="_blank"><b>home page</b></a> or <a href="../news" target="_blank"><b>news page</b></a> (right side).
 		<br><br><br>'
+	);	
+
+	$options[] = array(
+		'name' => __( 'Edit/ Delete Posts', 'theme-textdomain' ),
+		'type' => 'info',
+		'desc' => '- Go to <b>Posts</b> > <b>All post</b> > <b>Edit</b>/ <b>Trash</b>
+		<br><br><br>'
 	);
 
 	$options[] = array(
-		'name' => __( 'Edit/ Delete', 'theme-textdomain' ),
+		'name' => __( 'Add/ Edit Category', 'theme-textdomain' ),
 		'type' => 'info',
-		'desc' => '- Go to <b>Posts</b> > <b>All post</b> > <b>Edit</b>/ <b>Trash</b>'
+		'desc' => '- Go to <b>Posts</b> > <b>Categories</b>,<br>
+		- Add/edit <b>Category</b>,<br>
+		- input name, slug, and Choose <b>Parent category</b>,<br>
+		- Input thumbnail image for the category, Click "<b>add Category Image</b>" > "<b>Upload</b> > <b>Select Files</b> or pick image in <b>Media Library</b> if already exist",<br>
+		- Click "<b>Add New Category</b>" button to add the Category.'
 	);
 
 

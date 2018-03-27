@@ -13,12 +13,14 @@
     <meta charset="<?php bloginfo( 'charset' ); ?>" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hino Dealer se-Jabotabek</title>
+    <meta name="msvalidate.01" content="888C8C1E050B6616C95B955E5CB227D4" />
+    <meta name="description" content="<?php bloginfo( 'description' ); ?>">
+    <meta name="keywords" content="<?php bloginfo( 'description' ); ?>" />
+    <meta name="author" content="<?php bloginfo( 'wpurl' ); ?>" />
+    <title><?php bloginfo( 'name' ); ?></title>
     <!-- <title><?php wp_title( '|', true, 'right' ); ?></title> -->
     <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
     <?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
-    <!-- <meta name="author" content="" />
-    <meta name="keywords" content="" />  -->
     <link rel="icon" type="image/png" href="<?php bloginfo('template_url'); ?>/dist/images/favicon.png">
     
     <?php wp_head(); ?>    

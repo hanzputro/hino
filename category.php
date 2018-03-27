@@ -13,7 +13,7 @@
                 <div class="grid">
                     <div class="span12 box">
                         <div class="box__middle content">
-                            <div class="grid news">
+                            <div class="news">
 
                                 <?php 
                                 // get slug/hash from url
@@ -28,20 +28,20 @@
                                 <?php if ( have_posts() ) : while (have_posts()) : the_post(); ?>
                                         <!-- rest of the loop -->
                                         <!-- the title, the content etc.. -->
-                                        <div class="span6 news__list">
-                                            <a href="<?php the_permalink(); ?>"><h6 class="title"><?php the_title(); ?></h6></a>
+                                        <div class="news__list">
+                                            <a href="<?php the_permalink(); ?>"><h5 class="title"><?php the_title(); ?></h5></a>
                                             <div class="desc">
-                                                <style>
+                                                <!-- <style>
                                                     .news .news__list{ margin-right:1.5%; }
                                                     .news .news__list img{ width:110px; } 
                                                 }
-                                                </style>
+                                                </style> -->
                                                 <?php
                                                     if ( has_post_thumbnail() ) {
                                                         the_post_thumbnail( array( 190, 110) );
                                                     }
                                                 ?>
-                                                <?php my_excerpt(30); ?>
+                                                <?php my_excerpt(80); ?>
                                                 <a href="<?php the_permalink(); ?>" class="link s12">Selengkapnya &raquo;</a>
                                             </div>
                                         </div>
