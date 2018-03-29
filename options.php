@@ -211,7 +211,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( '', 'theme-textdomain' ),
 		'id' => 'header-mi',
-		'std' => 'Hubungi : 0812 9725 5355 / 0822 9866 6428',
+		'std' => 'Hubungi : 0812 1346 830 (Hafidz)',
 		'type' => 'text'
 	);
 
@@ -244,7 +244,7 @@ function optionsframework_options() {
 	$options[] = array(
 		'name' => __( '', 'theme-textdomain' ),
 		'id' => 'footer-cc',
-		'std' => '© Dealer Hino Bekasi. All Right Served.',
+		'std' => '© Dealer Hino Jabotabek. All Right Served.',
 		'type' => 'text'
 	);
 

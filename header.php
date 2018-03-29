@@ -50,6 +50,12 @@
                                     
                                     <a href="#bbbb" class="button--gray widthfull center">DETAIL</a>
                                 </li> -->
+                                <style type="text/css">
+                                    .header .tab-container li img {
+                                        width: 180px;
+                                        height: 135px;
+                                    }
+                                </style>
 
                                 <?php
                                     $args = array(
@@ -64,7 +70,7 @@
                                         $category_thumbnail = get_the_category_thumbnail($cat->cat_ID);
                                         ?>
                                         <li>
-                                            <p class="tittle margin0"><?php echo $cat->cat_name ?></p>
+                                            <h5 class="tittle margin0"><?php echo $cat->cat_name ?></h5>
                                             <?php echo $category_thumbnail ?>
                                             <a class="button--gray widthfull center" href="<?php echo esc_url( $category_link ); ?>">DETAIL</a>
                                         </li>
